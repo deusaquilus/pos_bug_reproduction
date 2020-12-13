@@ -1,10 +1,10 @@
 package io.getquill
 
-object QueryTest {
+object Test {
 
   inline def q2 = MyQuoteMacro.myquote
 
   def main(args: Array[String]): Unit = {
-    println( ContextRet.runAndTest( q2 ) ) //helloooooooo
+    println( PullAst.apply( q2 ) ) //helloooooooo
   }
 }
