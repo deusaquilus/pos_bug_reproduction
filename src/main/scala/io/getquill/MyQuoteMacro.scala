@@ -2,8 +2,7 @@ package io.getquill
 
 import scala.quoted._
 
-case class MyQuoted(val ast: String, runtimeQuotes: List[MyQuotationVase])
-case class MyQuotationVase(str: String)
+case class MyQuoted(val ast: String, runtimeQuotes: List[String])
 
 object MyQuoteMacro {
   inline def myquote: MyQuoted = ${ MyQuoteMacro.apply }
@@ -11,7 +10,7 @@ object MyQuoteMacro {
     import quotes.reflect._
 
     '{       
-      MyQuoted("p", ${Expr.ofList(List( '{ MyQuotationVase("foo") } ))})
+      MyQuoted("p", ${Expr.ofList(List( '{ "foo" } ))})
     }
   }
 }
