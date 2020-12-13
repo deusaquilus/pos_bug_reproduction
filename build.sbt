@@ -13,9 +13,5 @@ lazy val root = project
       "-language:implicitConversions"
     ),
 
-    libraryDependencies ++= Seq(
-      ("com.lihaoyi" %% "pprint" % "0.5.6").withDottyCompat(scalaVersion.value),
-      "org.scalatest" % "scalatest_3.0.0-M2" % "3.2.3" % "test",
-      "org.scalatest" % "scalatest-mustmatchers_3.0.0-M2" % "3.2.3" % "test",
-    )
+    libraryDependencies ++= Seq()
   )
