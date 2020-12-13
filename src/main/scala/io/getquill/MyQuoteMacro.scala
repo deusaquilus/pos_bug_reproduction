@@ -8,7 +8,6 @@ object MyQuoteMacro {
   inline def myquote: MyQuoted = ${ MyQuoteMacro.apply }
   def apply(using Quotes): Expr[MyQuoted] = {
     import quotes.reflect._
-
     '{ MyQuoted("p", ${Expr.ofList(List( '{ "foo" } ))}) }
   }
 }
