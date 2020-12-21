@@ -1,8 +1,9 @@
 package io.getquill
 
 object Test {
+  import Dsl._
 
-  inline def q2 = MyQuoteMacro.myquote
+  inline def q2 = MyQuoteMacro.myquote(ent.content(MyInsert("Foo")))
 
   def main(args: Array[String]): Unit = {
     println( PullAst.apply( q2 ) )

@@ -8,4 +8,6 @@ object PullAst {
 
   inline def apply(inline quoted: MyQuoted): String = 
     ${ applyImpl('quoted) }
+
+  // hello
 }
