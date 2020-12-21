@@ -6,7 +6,7 @@ case class MyInsert(key: String)
 
 object Dsl {
   inline def ent: Ent = new Ent("something") {}
-  extension (ent: Ent) // TODO what if this is inline?
+  extension (ent: Ent)
     inline def content(inline ins: MyInsert) = MyContent(ins.key, "blah")
 }
 

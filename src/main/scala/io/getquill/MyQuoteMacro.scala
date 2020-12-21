@@ -11,14 +11,3 @@ object MyQuoteMacro {
     '{ MyQuoted($content.key, ???) }
   }
 }
-
-// If you put this into here, then it works!
-/*
-object ContextRet {
-  def runTestImpl(quoted: Expr[MyQuoted])(using qctx: Quotes): Expr[String] =
-    '{ $quoted.ast.toString }
-
-  inline def runAndTest(inline quoted: MyQuoted): String = 
-    ${ runTestImpl('quoted) }
-}
-*/
